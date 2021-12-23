@@ -215,10 +215,23 @@
     print '<p>';
 
     print '<form method="get" action="Putreview.php">';
-                print '<font color="gray"> place : <input type="text" name="place"/>';
+    print '<font color="gray">place : 
+      <select name="place">
+        <option value="Seongsan Ilchulbong Tuff Cone">Seongsan Ilchulbong Tuff Cone</option>
+        <option value="TeddyBearMuseum">TeddyBearMuseum</option>
+        <option value="Yongyeon Valley">Yongyeon Valley</option>
+        <option value="DoryeonTangerineForest">DoryeonTangerineForest</option>
+      </select>';
     print '<font color="gray">&ensp; ID : <input type="text" name="ID"/>';
     print '<font color="gray"> &ensp; text : <input type="text" name="text"/>';
-      print '<font color="gray"> &ensp; star : <input type="text" name="star"/>';
+    print '<font color="gray"> &ensp; star : 
+      <select name="star">
+        <option value="1">★</option>
+        <option value="2">★★</option>
+        <option value="3">★★★</option>
+        <option value="4">★★★★</option>
+        <option value="5">★★★★★</option>
+      </select>';
     print '<font color="gray">&ensp; time : <input type="text" name="time"/>';
 
                     print '&ensp;<button>Upload</button></form>';
