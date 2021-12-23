@@ -3,31 +3,30 @@
   <title>seasons</title> 
   <style>
     .mytitle {
-    background-color : skyblue;
-    color : white ;
-    text-align : center;
-    padding : 10px;
-    margin-bottom : 20px;
+      background-color : skyblue;
+      color : white ;
+      text-align : center;
+      padding : 10px;
+      margin-bottom : 20px;
     }
     .warp{
-    text-align : center;
-    margin : auto;
-    width : 210px;
+      text-align : center;
+      margin : auto;
+      width : 210px;
     }
 
 
     table {
-    border-top: 1px solid #444444;
-        border-collapse: collapse;
-    border-color:skyblue;
+      border-top: 1px solid #444444;
+      border-collapse: collapse;
+      border-color:skyblue;
     }
 
     th, td {
-
-    border-bottom: 1px solid #444444;
-    border-color : skyblue;
-    padding: 30px;
-    color : gray;
+      border-bottom: 1px solid #444444;
+      border-color : skyblue;
+      padding: 30px;
+      color : gray;
     }
 
 
@@ -45,10 +44,10 @@
   </div>
 
   <?php 
-    function youlike($myeid, $s)
+    function youlike($s)
     {
       print '<table>';
-      while ($row = mysqli_fetch_array($s)) {
+      while ($row = mysqli_fetch_assoc($s)) {
         print '<tr>';
         foreach ($row as $item) {
           print '<td>'.($item?htmlentities($item):'&nbsp;').'</td>';
@@ -62,7 +61,8 @@
     function price($s)
     {
       print '<table>';
-      while ($row = mysqli_fetch_array($s)) {
+      while ($row = mysqli_fetch_assoc($s)) {
+        // print '<p>'$row['1']'</p>';
         print '<tr>';
         foreach ($row  as $item) {
           print '<td>'.($item?htmlentities($item):'&nbsp;').'</td>';
@@ -84,9 +84,7 @@
     and attraction.stat='".$_GET['pw']."'";
 
     $s = mysqli_query($c, $query);
-
-    mysqli_execute($s);
-    youlike($SNAME, $s);
+    youlike( $s);
   ?>
 
   <div class = "warp">

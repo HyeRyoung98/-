@@ -44,7 +44,7 @@
 
     function seasons($s) {
       print '<table>';
-      while ($row = mysqli_fetch_array($s)) {
+      while ($row = mysqli_fetch_assoc($s)) {
         print '<tr>'; 
         foreach ($row as $item){
           print '<td>'.($item?htmlentities($item):'&nbsp;').'</td>';
